@@ -1,9 +1,9 @@
 
-const Options= ({addOptions,deleteOptions})=>{
+const Options= ({addOptions,deleteOptions,uid,updateText})=>{
     return(
     <>
         <div className="col-md-8 offset-md-2 col-12 input-group my-3">
-            <input type="text" className="form-control" placeholder="Option text"/>
+            <input type="text" className="form-control" placeholder="Option text" onChange={e=>{updateText(uid,e.target.value)}}/>
             <div className="input-group-append">
                 <button className="btn btn-outline-secondary" type="button" onClick={()=>addOptions()}>+</button>
                 <button className="btn btn-outline-secondary" type="button" onClick={()=>deleteOptions()}>-</button>

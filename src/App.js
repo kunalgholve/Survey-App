@@ -23,9 +23,11 @@ function App() {
           <Switch>
             <Route path="/" component={Menu} exact />
             <Route path="/create" exact >
-              <CreateSurvey squestions={squestions} ></CreateSurvey>
+              <CreateSurvey squestions={squestions} setSquestions={setSquestions} ></CreateSurvey>
             </Route>
-              <Route path="/published" component={Published}  />
+              <Route path="/published">
+                <Published questions={squestions} />
+                </Route>
 
           </Switch>
         </Router>    
